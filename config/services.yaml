@@ -10,7 +10,6 @@ services:
 
   byhaskell\NovaPoshtaBundle\Client\ApiClient:
     arguments:
-      $httpClient: '@http_client'
       $apiKey: '%byhaskell_nova_poshta.api_key%'
       $baseUrl: '%byhaskell_nova_poshta.base_url%'
 
