@@ -21,9 +21,4 @@ class NovaPoshtaExtension extends Extension
             $loader->load('services.yaml');
         }
     }
-
-    public function getAlias(): string
-    {
-        return 'byhaskell_novaposhta';
-    }
 }
