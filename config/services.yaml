@@ -11,8 +11,8 @@ services:
   byhaskell\NovaPoshtaBundle\Client\ApiClient:
     arguments:
       $httpClient: '@http_client'
-      $apiKey: '%byhaskell_novaposhta.api_key%'
-      $baseUrl: '%byhaskell_novaposhta.base_url%'
+      $apiKey: '%novaposhta.api_key%'
+      $baseUrl: '%novaposhta.base_url%'
 
   byhaskell\NovaPoshtaBundle\Service\AddressService:
     arguments: ['@byhaskell\NovaPoshtaBundle\Client\ApiClient']

@@ -13,8 +13,8 @@ class NovaPoshtaExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('byhaskell_novaposhta.api_key', $config['api_key']);
-        $container->setParameter('byhaskell_novaposhta.base_url', $config['base_url'] ?? 'https://api.novaposhta.ua/v2.0/json/');
+        $container->setParameter('novaposhta.api_key', $config['api_key']);
+        $container->setParameter('novaposhta.base_url', $config['base_url'] ?? 'https://api.novaposhta.ua/v2.0/json/');
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
         if (file_exists(__DIR__.'/../../config/services.yaml')) {

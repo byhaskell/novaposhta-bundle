@@ -18,10 +18,10 @@ https://new.novaposhta.ua/dashboard/settings/developers
 
 2. Add config file
  
-config/packages/bh_nova_poshta.yaml:
+config/packages/byhaskell_novaposhta.yaml:
 
 ```
-byhaskell_novaposhta:
+novaposhta:
     api_key: 'ВАШ_API_KEY'
 ```
 
