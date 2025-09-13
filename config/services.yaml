@@ -1,0 +1,23 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  byhaskell\NovaPoshtaBundle\:
+    resource: '../src/*'
+    exclude: '../src/{DependencyInjection,Entity,Migrations,Tests}'
+
+  byhaskell\NovaPoshtaBundle\Client\ApiClient:
+    arguments:
+      $httpClient: '@http_client'
+      $apiKey: '%byhaskell_novaposhta.api_key%'
+      $baseUrl: '%byhaskell_novaposhta.base_url%'
+
+  byhaskell\NovaPoshtaBundle\Service\AddressService:
+    arguments: ['@byhaskell\NovaPoshtaBundle\Client\ApiClient']
+
+  byhaskell\NovaPoshtaBundle\NovaPoshta:
+    arguments:
+      $address: '@byhaskell\NovaPoshtaBundle\Service\AddressService'
+    public: true
