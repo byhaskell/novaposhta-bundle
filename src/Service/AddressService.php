@@ -9,7 +9,7 @@ class AddressService
 
     public function searchSettlements(string $cityName, int $limit = 10, int $page = 1): array
     {
-        return $this->client->request('AddressGeneral', __METHOD__, [
+        return $this->client->request('AddressGeneral', __FUNCTION__, [
             'CityName' => $cityName,
             'Limit' => $limit,
             'Page' => $page,
