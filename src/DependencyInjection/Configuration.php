@@ -8,7 +8,7 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $tb = new TreeBuilder('byhaskell_novaposhta');
+        $tb = new TreeBuilder('byhaskell_nova_poshta');
         $root = $tb->getRootNode();
 
         $root
