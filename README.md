@@ -8,7 +8,7 @@ About
 -----
 Nova Poshta integration bundle for Symfony (6, 7)
 
-Created by https://github.com/byhaskell
+Created by [@byhaskell](https://github.com/byhaskell)
 
 #StandWithUkraine 🇺🇦
 
@@ -46,9 +46,7 @@ Add NP_API_KEY in .env
 Usage
 -----
 
-```
-<?php
-
+```php
 public function index(\byhaskell\NovaPoshtaBundle\NovaPoshta $np): JsonResponse
 {
     $streets = $np->address()->searchSettlementStreets('ref', 'Шевченка');
