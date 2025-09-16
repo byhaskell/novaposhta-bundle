@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
 
         $root
             ->children()
-                ->scalarNode('api_key')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('api_key')->defaultValue('')->end()
                 ->scalarNode('base_url')->defaultValue('https://api.novaposhta.ua/v2.0/json/')->end()
             ->end();
 
