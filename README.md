@@ -40,6 +40,7 @@ byhaskell_nova_poshta:
     # You can create one on the Nova Poshta website at:
     # https://new.novaposhta.ua/dashboard/settings/developers
     api_key: '%env(NP_API_KEY)%'
+    base_url: 'https://api.novaposhta.ua/v2.0/json/'
 ```
 Add NP_API_KEY in .env
 
@@ -47,10 +48,18 @@ Usage
 -----
 
 ```php
-public function index(\byhaskell\NovaPoshtaBundle\NovaPoshta $np): JsonResponse
+public function index(\byhaskell\NovaPoshtaBundle\NovaPoshta $novaPoshta): JsonResponse
 {
-    $streets = $np->address()->searchSettlementStreets('ref', 'Шевченка');
-    return $this->json($streets);
+    $response = $novaPoshta->address()->searchSettlements('Київ');
+    if ($response->isSuccess()) {
+        /** @var AddressResponse $result */
+        $result = $response->getResult();
+
+        // Errors 
+        // $response->getInfo();
+        // $response->getErrors();
+        // $response->getWarnings();
+    }
 }
 ```
 
