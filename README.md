@@ -54,7 +54,7 @@ public function index(\byhaskell\NovaPoshtaBundle\NovaPoshta $novaPoshta): JsonR
     if ($response->isSuccess()) {
         /** @var AddressResponse $result */
         $result = $response->getResult();
-
+    } else {
         // Errors 
         // $response->getInfo();
         // $response->getErrors();
